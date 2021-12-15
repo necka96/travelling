@@ -6,6 +6,10 @@
   list-style: none;
   scroll-behavior: smooth;
 }
+body,
+html {
+  overflow-x: hidden;
+}
 :root {
   --gray: #e6cab9;
   --blue: #222e50;
@@ -27,8 +31,9 @@ h3 {
   position: fixed;
   left: 0;
   top: 0;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 13;
 }
 .preloader.disppear {
@@ -226,7 +231,7 @@ header .container .content {
   border-radius: 20px;
 }
 header .container .content::after {
-  content: url(./img/heder-img.jpg);
+  content: url(../img/heder-img.jpg);
   transform: translate(-10rem, -20rem) scale(0.5);
   position: absolute;
   z-index: -1;
