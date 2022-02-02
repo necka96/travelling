@@ -34,7 +34,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 13;
+  z-index: 99999;
 }
 .preloader.disppear {
   animation: disppear 0.5s forwards;
@@ -91,6 +91,8 @@ h3 {
 header {
   width: 100%;
   height: 65vh;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
+    url(../img/heder-img.jpg) center/cover;
 }
 nav {
   display: flex;
@@ -119,6 +121,7 @@ nav.sticky .logo {
 }
 nav .logo {
   font-size: 2rem;
+  color: #fff;
 }
 
 .menui {
@@ -165,7 +168,7 @@ nav.sticky .bottom-menu {
   width: 25px;
   height: 2px;
   border-radius: 10px;
-  background-color: black;
+  background-color: #fff;
 }
 
 .mid-menu {
@@ -173,7 +176,7 @@ nav.sticky .bottom-menu {
   width: 25px;
   height: 2px;
   border-radius: 10px;
-  background-color: black;
+  background-color: #fff;
 }
 
 .bottom-menu {
@@ -181,7 +184,7 @@ nav.sticky .bottom-menu {
   width: 25px;
   height: 2px;
   border-radius: 10px;
-  background-color: black;
+  background-color: #fff;
 }
 
 .mobilenav {
@@ -230,12 +233,12 @@ header .container .content {
   color: #fff;
   border-radius: 20px;
 }
-header .container .content::after {
+/* header .container .content::after {
   content: url(../img/heder-img.jpg);
   transform: translate(-10rem, -20rem) scale(0.5);
   position: absolute;
   z-index: -1;
-}
+} */
 
 #about {
   width: 100%;
@@ -318,7 +321,6 @@ header .container .content::after {
 }
 #about .about-holder img {
   height: 25rem;
-  border: 6px solid var(--blue);
   transition: 0.6s ease-in-out;
   transform: scale(0.9);
   border-radius: 20px;
@@ -377,7 +379,8 @@ header .container .content::after {
 .travelling-container .travelling-image img {
   height: 20rem;
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  outline: 6px solid var(--blue);
+  -webkit-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  -moz-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   transition: 0.6s ease-in-out;
   transform: scale(0.9);
   cursor: pointer;
@@ -401,13 +404,15 @@ header .container .content::after {
   margin-bottom: 1rem;
 }
 .gallery-container {
-  padding: 4rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  grid-auto-rows: 200px;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: 10px;
+  width: 90%;
+  margin: 0 auto;
+  place-items: center;
   grid-auto-flow: dense;
 }
+
 .gallery-container a {
   display: flex;
   justify-content: center;
@@ -418,11 +423,16 @@ header .container .content::after {
   width: 100%;
   height: 100%;
   transition: 0.6s ease-in-out;
-  border: 8px solid var(--blue);
   transform: scale(0.9);
   border-radius: 20px;
 }
-.gallery-container .gallery-one {
+.gallery-container .gallery-two {
+  margin-top: 5rem;
+}
+.gallery-container .gallery-three {
+  margin-top: 10rem;
+}
+/* .gallery-container .gallery-one {
   grid-column: span 3;
   grid-row: span 2;
   margin-top: 5rem;
@@ -440,7 +450,7 @@ header .container .content::after {
 .gallery-container .gallery-four {
   grid-column: span 3;
   grid-row: span 2;
-}
+} */
 .confetto {
   width: 15px !important;
   height: 15px !important;
@@ -591,11 +601,14 @@ footer {
   header .container .content {
     margin-left: unset;
   }
+  .gallery-container .gallery-two {
+    margin-top: 2rem;
+  }
+  .gallery-container .gallery-three {
+    margin-top: 4rem;
+  }
   .travelling-container .travelling-image img {
     height: 20rem;
-  }
-  .gallery-container .gallery-one {
-    margin-top: 10px;
   }
   .contact-container {
     height: fit-content;
@@ -606,10 +619,10 @@ footer {
   }
 }
 @media only screen and (max-width: 900px) {
-  header .container .content::after {
+  /* header .container .content::after {
     transform: translate(-12rem, -20rem) scale(0.5) !important;
     width: 100%;
-  }
+  } */
   .travelling-container .travelling-image img {
     height: 15rem;
   }
@@ -622,7 +635,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
   }
-  header .container .content::after {
+  /* header .container .content::after {
     transform: translate(-10rem, -20rem) scale(0.4);
-  }
+  } */
 }
