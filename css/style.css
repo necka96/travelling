@@ -517,7 +517,8 @@ header .container .content {
   padding: 7rem 0;
 }
 #contact h5 {
-  color: #fff !important;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
 }
 .contact-container {
   background: var(--blue);
